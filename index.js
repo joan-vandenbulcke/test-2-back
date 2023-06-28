@@ -31,12 +31,19 @@ app.post('/score', async (req, res) => {
   for (let i = 0; i < pointList.length; i++) {
     const point = pointList[i];
     const winner = point.winner;
+    // Ici, je peux console.log "point.winner" qui va me donner "player1" ou "player2" 
+    // Je peux aussi console.log "player1" et "player2" qui va cette fois va m'indiquer "Rafael Nadal" et "Novak Djokovic"
 
-    if (winner === player1) {
+    // TEST DE MODIFICATION DE player1 et player2 vers une string "player1" et "player2"
+    if (winner === "player1") {
       player1Points++;
-    } else if (winner === player2) {
+    } else if (winner === "player2") {
       player2Points++;
     }
+
+    console.log(player1); // là, je console.log (Rafael Nadal)
+    console.log(point.winner); // là, je console.log ("player1")
+    // IL Y A DONC UN PROBLEME D'INCRÉMENTATION ÉVIDENT
 
     if (player1Points >= 4 && player1Points - player2Points >= 2) {
       player1Games++;
