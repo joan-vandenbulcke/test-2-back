@@ -1,1 +1,8 @@
 /tests
+/controllers
+/models
+/routes
+/services
+/config
+/db
+/node_modules
